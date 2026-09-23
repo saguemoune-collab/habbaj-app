@@ -14,7 +14,7 @@ st.write("---")
 def load_database():
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     # تأكد من أن مجلد قاعدة البيانات موجود في نفس مسار ملف app.py
-    vector_store = FAISS.load_local("habbaj_ammar_vector_db", embeddings, allow_dangerous_deserialization=True)
+    vector_store = FAISS.load_local(".", embeddings, allow_dangerous_deserialization=True)
     return vector_store
 
 with st.spinner("⏳ جاري تحميل ذاكرة المساعد وتجهيز التشريعات... يرجى الانتظار"):
